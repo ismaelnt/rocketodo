@@ -1,6 +1,6 @@
 import { PlusCircle } from 'phosphor-react';
 
-import styles from './addTodo.module.scss';
+import styles from './todoForm.module.scss';
 
 export function TodoForm() {
   return (
