@@ -12,10 +12,10 @@
 
   p {
     color: var(--blue-500);
-  }
 
-  p:nth-child(3n) {
-    color: var(--purple-500);
+    &:nth-child(3n) {
+      color: var(--purple-500);
+    }
   }
 
   img {
