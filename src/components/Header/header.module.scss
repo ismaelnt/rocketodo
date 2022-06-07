@@ -1,0 +1,24 @@
+.header {
+  background: var(--gray-900);
+  display: flex;
+  height: 12.5rem;
+  padding: 4.5rem 0 5rem 0;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 2.2rem;
+  display: flex;
+
+  p {
+    color: var(--blue-500);
+  }
+
+  p:nth-child(3n) {
+    color: var(--purple-500);
+  }
+
+  img {
+    margin: 0.625rem 0.75rem 0 0;
+  }
+}
