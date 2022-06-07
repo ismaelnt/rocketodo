@@ -3,7 +3,7 @@ import { useState } from 'react';
 export function App() {
   return (
     <div>
-      <h1>Hello world</h1>
+      <h1>todo world</h1>
     </div>
   );
 }
