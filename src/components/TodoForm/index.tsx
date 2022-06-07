@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { PlusCircle } from 'phosphor-react';
 
 import styles from './todoForm.module.scss';
 
 export function TodoForm() {
+  const [newTodo, setNewTodo] = useState<string>('');
+
   return (
     <form className={styles.form}>
       <input

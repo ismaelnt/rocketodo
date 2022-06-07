@@ -1,11 +1,13 @@
 import styles from './card.module.scss';
 import { Trash } from 'phosphor-react';
 
-export function Card() {
+import { ITodo } from '../../types/todo.type';
+
+export function Card({ id, content, isCompleted }: ITodo) {
   return (
-    <div className={styles.todoCard}>
-      <input type='checkbox' />
-      <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+    <div className={styles.todoCard} key={id}>
+      <input type='checkbox' checked={isCompleted} />
+      <p>{content}</p>
       <button>
         <Trash size={20} />
       </button>

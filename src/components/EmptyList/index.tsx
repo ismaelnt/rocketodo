@@ -1,6 +1,6 @@
 import clipboard from '../../assets/clipboard.svg';
 
-import styles from './todoList.module.scss';
+import styles from './emptyList.module.scss';
 
 export function EmptyList() {
   return (
