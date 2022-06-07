@@ -1,15 +1,19 @@
 import styles from './todoList.module.scss';
-import { EmptyList } from './EmptyList';
-import { HeaderList } from './HeaderList';
+import { Card } from '../Card';
 
 export function TodoList() {
   return (
     <div>
-      <HeaderList />
-      <div className={styles.line} />
-      <EmptyList />
+      <div className={styles.headerList}>
+        <p>Tarefas criadas <span>0</span></p>
+        <p>Concluídas <span>0</span></p>
+      </div>
 
+      {/* <EmptyList /> */}
 
+      <Card />
+      <Card />
+      <Card />
     </div>
   );
 }

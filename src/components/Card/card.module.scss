@@ -1,0 +1,52 @@
+.todoCard {
+  width: auto;
+  height: 4.5rem;
+  background: var(--gray-500);
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+
+  input {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid var(--blue-500);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-image, 0.1s ease;
+
+    &:checked {
+      border: 6px solid var(--purple-700);
+      background-color: var(--purple-700);
+      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
+      background-position: center;
+      color: #fff;
+    }
+  }
+
+  p {
+    width: 90%;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    color: var(--gray-300);
+    border-radius: 4px;
+
+    transition: 0.2s;
+
+    :hover {
+      color: var(--red-500);
+    }
+  }
+}
