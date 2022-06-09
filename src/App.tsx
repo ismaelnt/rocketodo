@@ -29,6 +29,7 @@ export function App() {
         {hasTodo
           ? todos.map((todo) => (
             <Card
+              key={todo.id}
               id={todo.id}
               content={todo.content}
               isCompleted={todo.isCompleted}

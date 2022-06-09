@@ -1,14 +1,23 @@
+import { useContext } from 'react';
+import { useTodos } from '../../contexts/useTodos';
+import { ITodo } from '../../types/todo.type';
+
 import styles from './card.module.scss';
 import { Trash } from 'phosphor-react';
 
-import { ITodo } from '../../types/todo.type';
 
 export function Card({ id, content, isCompleted }: ITodo) {
+  const { deleteTodo } = useContext(useTodos);
+
+  function handleDeleteTodo() {
+    deleteTodo(id);
+  }
+
   return (
-    <div className={styles.todoCard} key={id}>
+    <div className={styles.todoCard}>
       <input type='checkbox' checked={isCompleted} />
       <p>{content}</p>
-      <button>
+      <button onClick={handleDeleteTodo}>
         <Trash size={20} />
       </button>
     </div>
