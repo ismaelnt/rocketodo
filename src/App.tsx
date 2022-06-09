@@ -1,4 +1,4 @@
-import { ITodo } from './types/todo.type';
+import { useContext } from 'react';
 
 import common from './styles/common.module.scss';
 import styles from './app.module.scss';
@@ -7,8 +7,10 @@ import { TodoForm } from './components/TodoForm';
 import { EmptyList } from './components/EmptyList';
 import { Card } from './components/Card';
 
+import { useTodos } from './contexts/useTodos';
+
 export function App() {
-  const todos: ITodo[] = [];
+  const { todos } = useContext(useTodos);
 
   const hasTodo = todos.length !== 0;
 
@@ -16,7 +18,7 @@ export function App() {
     <div>
       <Header />
 
-      <div className={common.container}>
+      <main className={common.container}>
         <TodoForm />
 
         <div className={styles.headerList}>
@@ -34,7 +36,7 @@ export function App() {
           ))
           : <EmptyList />
         }
-      </div>
+      </main>
     </div>
   );
 }

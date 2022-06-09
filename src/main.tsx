@@ -3,8 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import './styles/global.scss';
 
+import { TodosProvider } from './contexts/useTodos';
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <TodosProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </TodosProvider>
 );
