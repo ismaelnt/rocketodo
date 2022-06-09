@@ -9,7 +9,7 @@ interface TodosProviderProps {
 
 interface TodosContextData {
   todos: ITodo[];
-  handleCreateTodo: (content: string) => void;
+  createTodo: (content: string) => void;
 }
 
 export const useTodos = createContext<TodosContextData>({} as TodosContextData);
@@ -17,7 +17,7 @@ export const useTodos = createContext<TodosContextData>({} as TodosContextData);
 export function TodosProvider({ children }: TodosProviderProps) {
   const [todos, setTodos] = useState<ITodo[]>([]);
 
-  function handleCreateTodo(content: string) {
+  function createTodo(content: string) {
     const todo: ITodo = {
       id: uuidV4(),
       content: content,
@@ -28,7 +28,7 @@ export function TodosProvider({ children }: TodosProviderProps) {
   }
 
   return (
-    <useTodos.Provider value={{ todos, handleCreateTodo }}>
+    <useTodos.Provider value={{ todos, createTodo }}>
       {children}
     </useTodos.Provider>
   );

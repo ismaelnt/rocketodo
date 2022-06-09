@@ -5,22 +5,22 @@ import { PlusCircle } from 'phosphor-react';
 import styles from './todoForm.module.scss';
 
 export function TodoForm() {
-  const { handleCreateTodo } = useContext(useTodos);
+  const { createTodo } = useContext(useTodos);
   const [newTodo, setNewTodo] = useState('');
 
   function handleNewTodoChange(event: ChangeEvent<HTMLInputElement>) {
     setNewTodo(event.target.value);
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleCreateTodo(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    handleCreateTodo(newTodo);
+    createTodo(newTodo);
     setNewTodo('');
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleCreateTodo}>
       <input
         type='text'
         name='todo'
