@@ -10,7 +10,8 @@ interface TodosProviderProps {
 interface TodosContextData {
   todos: ITodo[];
   createTodo: (content: string) => void;
-  deleteTodo: (todoToDelete: string) => void;
+  deleteTodo: (id: string) => void;
+  isCompleteTodo: (id: string) => void;
 }
 
 export const useTodos = createContext<TodosContextData>({} as TodosContextData);
@@ -28,16 +29,28 @@ export function TodosProvider({ children }: TodosProviderProps) {
     setTodos([...todos, todo]);
   }
 
-  function deleteTodo(todoToDelete: string) {
+  function deleteTodo(id: string) {
     const todosWithoutDeleteOne = todos.filter((todo) => {
-      return todo.id !== todoToDelete
+      return todo.id !== id;
     });
 
     setTodos(todosWithoutDeleteOne);
   }
 
+  function isCompleteTodo(id: string) {
+    const todoIsComplete = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.isCompleted = !todo.isCompleted;
+      }
+
+      return todo;
+    });
+
+    setTodos(todoIsComplete);
+  }
+
   return (
-    <useTodos.Provider value={{ todos, createTodo, deleteTodo }}>
+    <useTodos.Provider value={{ todos, createTodo, deleteTodo, isCompleteTodo }}>
       {children}
     </useTodos.Provider>
   );

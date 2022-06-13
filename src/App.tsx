@@ -14,6 +14,8 @@ export function App() {
 
   const hasTodo = todos.length !== 0;
 
+  const todosCompleted = todos.filter((todo) => todo.isCompleted);
+
   return (
     <div>
       <Header />
@@ -22,8 +24,14 @@ export function App() {
         <TodoForm />
 
         <div className={styles.headerList}>
-          <p>Tarefas criadas<span>{todos.length}</span></p>
-          <p>Concluídas<span>0 {hasTodo ? `de ${todos.length}` : null}</span></p>
+          <p>Tarefas criadas
+            <span>{todos.length}</span>
+          </p>
+          <p>Concluídas
+            <span>
+              {todosCompleted.length} {hasTodo ? `de ${todos.length}` : null}
+            </span>
+          </p>
         </div>
 
         {hasTodo
